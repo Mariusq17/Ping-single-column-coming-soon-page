@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Franklin', sans-serif;
+}
+:root {
+    /* Colors */
+    --blue: hsl(223, 87%, 63%);
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+    --font-size: 18px;
+}
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.content h1 {
+    font-size: calc(2 * var(--font-size));
+    font-weight: 300;
+    color: var(--gray);
+}
+.content h1 span {
+    color: var(--very-dark-blue);
+    font-weight: 700;
+}
+.content h2 {
+    font-size: calc(1.25 * var(--font-size));
+    font-weight: 300;
+    color: var(--gray);
+}
+.content .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.content .info form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 125%;
+    margin-top: 2rem;
+}
+.content .info .input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 3;
+    position: relative;
+}
+.content .info #inputField {
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 900px;
+    border: 1px solid var(--gray);
+    font-size: calc(.9 * var(--font-size));
+    font-weight: 300;
+}
+.content .info button {
+    flex-grow: 1;
+    padding: 15px 30px;
+    border-radius: 900px;
+    border: 1px solid var(--blue);
+    font-size: calc(.8 * var(--font-size));
+    font-weight: 700;
+    color: white;
+    background-color: var(--blue);
+    box-shadow: 0px 5px 15px var(--pale-blue);
+    cursor: pointer;
+    transition: 300ms;
+}
+.content .info button:hover {
+    --blue: hsl(223, 87%, 23%);
+}
+.content form .alertError {
+    user-select: none;
+    opacity: 0;
+    font-size: calc(.8 * var(--font-size));
+    color: var(--light-red);
+    font-style: italic;
+    position: absolute;
+    bottom: -25px;
+    left: 10%;
+    transition: 300ms;
+}
+.content form .alertError.active {
+    opacity: 1;
+    user-select: text;
+}
+.dashboard {
+    width: min(700px, 80%);
+    margin-top: 2rem;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.footer .socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.footer .socials i {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    border-radius: 50%;
+    border: 1px solid var(--blue);
+    box-shadow: 0px 2.5px 5px var(--pale-blue);
+    padding: 15px;
+    transition: 300ms;
+}
+.footer .socials i:hover {
+    --blue: hsl(223, 87%, 23%);
+    background-color: var(--blue);
+    color: white;
+}
+.footer span {
+    color: var(--gray);
+    font-size: calc(.75 * var(--font-size));
+}
+@media (max-width: 767px) {
+    :root {
+        --font-size: 16px;
+    }
+    .content .info form {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .content form .alertError {
+        width: 100%;
+        text-align: center;
+        left: 0;
+    }
+    .content .info .input-wrapper {
+        width: 75%;
+    }
+    .content .info button {
+        width: 75%;
+    }
+}
